@@ -1,0 +1,117 @@
+
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    /* Centrē navigācijas saišu elementus */
+    gap: 15px;
+    flex-grow: 1;
+    /* Ļauj navigācijas saišu blokam izstiepties */
+}
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+.dropdown {
+    position: absolute;
+    right: 3%;
+    margin-top: 5px;
+    display: inline-block;
+    border: 1px solid white;
+}
+
+
+
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e01616;
+    padding: 10px 20px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    /* Centrē navigācijas saišu elementus */
+    gap: 15px;
+    flex-grow: 1;
+    /* Ļauj navigācijas saišu blokam izstiepties */
+}
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+.dropdown {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    display: inline-block;
+    background-color: #555;
+
+
+}
+
+.dropdown:hover {
+    background-color: rgb(88, 114, 112);
+}
+
+.dropdown-content {
+    display: none; /* Содержимое скрыто по умолчанию */
+    position: absolute; /* Позиционирование содержимого относительно контейнера .dropdown */
+    background-color: #333; /* Цвет фона содержимого */
+    min-width: 160px; /* Минимальная ширина содержимого */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Тень для содержимого */
+    z-index: 1; /* Уровень наложения содержимого */
+    top: 100%; /* Расположение содержимого прямо под контейнером .dropdown */
+    left: -98px; /* Сдвиг содержимого влево на 20px относительно контейнера */
+}
+
+/* Показ содержимого при наведении на контейнер */
+.dropdown:hover .dropdown-content {
+    display: block; /* Отображение содержимого при наведении на .dropdown */
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

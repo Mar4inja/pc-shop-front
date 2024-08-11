@@ -1,0 +1,75 @@
+/* home.module.css */
+.home {
+  text-align: center;
+  padding: 20px;
+  background: url('../../img/bg.jpg');
+}
+
+.card_container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 10px;
+  width: 450px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Pozicionē kartiņas relatīvi */
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+transform: scale(1.05);
+}
+
+
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Maina 2. kartiņas attēla izmērus */
+.card:nth-child(2) img {
+  width: 450px; /* Platums 2. kartiņas attēlam */
+}
+
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #333333da;
+  color: #fff;
+  padding: 15px; /* Palielina paddingu, lai izskatās labāk */
+  border-radius: 12
+  px;
+  font-size: 14px;
+  width: 400px; /* Pielāgo tooltipa platumu, lai var ietilpt vairāk teksts */
+  height: auto; /* Ļauj tooltipam būt elastīgam augstumā */
+  top: 100%; /* Novieto tooltip zem kartiņas */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap; /* Novērš tekstu no pārvēršanās nākamajā rindā */
+  margin-top: 100px; /* Attālums no kartiņas */
+}
+
+/* Ķīļa efekts tooltipam */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -10px; /* Ķīļa vertikālais novietojums virs tooltipa */
+  left: 50%;
+  transform: translateX(-50%); /* Centrē ķīli horizontāli */
+  border-width: 10px; /* Ķīļa lielums */
+  border-style: solid;
+  border-color: transparent transparent #333 transparent; /* Ķīļa krāsa */
+}
+
+/* Parāda tooltip, kad pārnes pār elementu */
+.tooltip_container:hover .tooltip {
+  display: block;
+}
