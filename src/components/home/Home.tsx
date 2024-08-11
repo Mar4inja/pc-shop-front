@@ -9,6 +9,7 @@ import image4 from '../../img/pcs/img_0016_14.png';
 
 const Home: React.FC = () => {
   return (
+    <>
     <div className={styles.home}>
       <div className={styles.card_container}>
         <div className={`${styles.card} ${styles.tooltip_container}`}>
@@ -69,6 +70,11 @@ const Home: React.FC = () => {
         </div>
       </div>
     </div>
+    <div className={styles['content-container']}>
+      <p>New Container</p>
+
+    </div>
+    </>
   );
 };
 

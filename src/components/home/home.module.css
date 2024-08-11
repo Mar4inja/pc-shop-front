@@ -38,38 +38,34 @@ transform: scale(1.05);
   width: 450px; /* Platums 2. kartiņas attēlam */
 }
 
-
 .tooltip {
   display: none;
   position: absolute;
   background-color: #333333da;
   color: #fff;
-  padding: 15px; /* Palielina paddingu, lai izskatās labāk */
-  border-radius: 12
-  px;
+  padding: 15px;
+  border-radius: 12px;
   font-size: 14px;
-  width: 400px; /* Pielāgo tooltipa platumu, lai var ietilpt vairāk teksts */
-  height: auto; /* Ļauj tooltipam būt elastīgam augstumā */
-  top: 100%; /* Novieto tooltip zem kartiņas */
+  width: 400px;
+  height: auto;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  white-space: nowrap; /* Novērš tekstu no pārvēršanās nākamajā rindā */
-  margin-top: 100px; /* Attālums no kartiņas */
+  white-space: nowrap;
+  margin-top: 100px;
+  opacity: 0; /* Sākotnējā redzamība */
+  transition: opacity 0.3s ease, margin-top 0.3s ease; /* Pievieno pārejas efektu */
 }
 
-/* Ķīļa efekts tooltipam */
-.tooltip::after {
-  content: '';
-  position: absolute;
-  top: -10px; /* Ķīļa vertikālais novietojums virs tooltipa */
-  left: 50%;
-  transform: translateX(-50%); /* Centrē ķīli horizontāli */
-  border-width: 10px; /* Ķīļa lielums */
-  border-style: solid;
-  border-color: transparent transparent #333 transparent; /* Ķīļa krāsa */
-}
-
-/* Parāda tooltip, kad pārnes pār elementu */
+/* Parāda tooltip ar pāreju, kad pārnes pār elementu */
 .tooltip_container:hover .tooltip {
   display: block;
+  opacity: 1; /* Maina redzamību uz 1 */
+  margin-top: 10px; /* Pārvieto tooltip tuvāk elementam ar pāreju */
+}
+
+.content-container {
+  text-align: center;
+  padding: 420px;
+  background: green;
 }
