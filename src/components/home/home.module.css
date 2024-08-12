@@ -1,7 +1,7 @@
 /* home.module.css */
 .home {
   text-align: center;
-  padding: 20px;
+  padding: 60px;
   background: url('../../img/bg.jpg');
 }
 
@@ -68,4 +68,40 @@ transform: scale(1.05);
   text-align: center;
   padding: 420px;
   background: green;
+}
+
+/* Apskates stili ekrāniem līdz 768px platumam */
+@media (max-width: 768px) {
+  .card {
+    width: 45%; /* Kartītes aizņem 45% no konteinera platuma */
+    height: auto;
+  }
+
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .tooltip {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* Apskates stili ekrāniem līdz 480px platumam */
+@media (max-width: 480px) {
+  .card {
+    width: 100%; /* Kartītes aizņem 100% no konteinera platuma */
+    height: auto;
+  }
+
+  .tooltip {
+    width: 100%;
+    max-width: 300px;
+    font-size: 12px;
+  }
+
+  .content-container {
+    padding: 30px 15px;
+  }
 }
