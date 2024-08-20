@@ -1,6 +1,4 @@
-/* navigation.module.css */
-
-/* Скрыть прокрутку на основной странице при открытии Offcanvas */
+/* Общие стили, применяемые на всех устройствах */
 .body-fixed {
   overflow: hidden; /* Скрываем прокрутку */
 }
@@ -105,4 +103,65 @@
 
 .formPushedDown {
   margin-top: 140px;
+}
+
+/* Адаптивные стили для экранов меньшего размера */
+
+/* Для устройств шириной 768px и менее */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .navbarBrand {
+    font-size: 1rem; /* Уменьшаем размер шрифта */
+  }
+
+  .navbarTogglerIcon {
+    width: 36px; /* Уменьшаем размер иконки */
+    height: 36px;
+  }
+
+  .navLink {
+    padding: 0.5rem 0.75rem; /* Уменьшаем отступы */
+  }
+
+  .searchForm {
+    flex-direction: column; /* Выравниваем форму поиска по вертикали */
+    margin-top: 8px;
+  }
+
+  .searchButton {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%; /* Кнопка занимает всю ширину */
+  }
+}
+
+/* Для устройств шириной 576px и менее */
+@media (max-width: 576px) {
+  .navbarBrand {
+    font-size: 0.875rem; /* Еще больше уменьшаем размер шрифта */
+  }
+
+  .navbarTogglerIcon {
+    width: 32px; /* Уменьшаем размер иконки */
+    height: 32px;
+  }
+
+  .navLink {
+    padding: 0.5rem 0.5rem; /* Еще больше уменьшаем отступы */
+  }
+
+  .searchForm {
+    margin-top: 4px; /* Уменьшаем отступ сверху */
+  }
+
+  .searchInput {
+    padding: 6px; /* Уменьшаем внутренние отступы */
+  }
+
+  .searchButton {
+    padding: 6px 12px; /* Уменьшаем размер кнопки */
+  }
 }

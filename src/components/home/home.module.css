@@ -3,13 +3,18 @@
   text-align: center;
   padding: 60px;
   background: url('../../img/bg.jpg');
+  background-size: cover;
 }
 
 .card_container {
+  position: absolute;
+  top: 20%;
+  left: 10%;
   display: flex;
   justify-content: space-around;
-  gap: 20px;
+  gap: 80px;
   flex-wrap: wrap;
+  
 }
 
 .card {
@@ -33,11 +38,6 @@ transform: scale(1.05);
   max-height: 100%;
 }
 
-/* Maina 2. kartiņas attēla izmērus */
-.card:nth-child(2) img {
-  width: 450px; /* Platums 2. kartiņas attēlam */
-}
-
 .tooltip {
   display: none;
   position: absolute;
@@ -53,11 +53,10 @@ transform: scale(1.05);
   transform: translateX(-50%);
   white-space: nowrap;
   margin-top: 100px;
-  opacity: 0; /* Sākotnējā redzamība */
-  transition: opacity 0.3s ease, margin-top 0.3s ease; /* Pievieno pārejas efektu */
+  opacity: 0;
+  transition: opacity 0.3s ease, margin-top 0.3s ease;
 }
 
-/* Parāda tooltip ar pāreju, kad pārnes pār elementu */
 .tooltip_container:hover .tooltip {
   display: block;
   opacity: 1; /* Maina redzamību uz 1 */
@@ -68,18 +67,23 @@ transform: scale(1.05);
   text-align: center;
   padding: 420px;
   background: green;
+  height: 500px;
 }
+@media (max-width: 1024px) {
+  .card_container {
+    justify-content: center; /* Центрируем карточки, если их меньше на линии */
+  }
+  
 
-/* Apskates stili ekrāniem līdz 768px platumam */
-@media (max-width: 768px) {
   .card {
-    width: 45%; /* Kartītes aizņem 45% no konteinera platuma */
+    width: 45%; /* Карточки занимают 45% ширины контейнера */
     height: auto;
+    margin-bottom: 20px; /* Добавляем отступ между карточками */
   }
 
   .card img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Изображение занимает всю ширину карточки */
+    height: auto; /* Высота автоматически подстраивается под ширину */
   }
 
   .tooltip {
@@ -88,11 +92,22 @@ transform: scale(1.05);
   }
 }
 
-/* Apskates stili ekrāniem līdz 480px platumam */
+/* Адаптивные стили для экранов шириной до 480px */
 @media (max-width: 480px) {
+  .card_container {
+    flex-direction: column; /* Упорядочиваем карточки в колонку */
+    align-items: center; /* Центрируем карточки по горизонтали */
+  }
+
   .card {
-    width: 100%; /* Kartītes aizņem 100% no konteinera platuma */
+    width: 100%; /* Карточки занимают 100% ширины контейнера */
     height: auto;
+    margin-bottom: 20px; /* Добавляем отступ между карточками */
+  }
+
+  .card img {
+    width: 100%; /* Изображение занимает всю ширину карточки */
+    height: auto; /* Высота автоматически подстраивается под ширину */
   }
 
   .tooltip {

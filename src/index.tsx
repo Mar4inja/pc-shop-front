@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './app/store/store';
 import App from './App';
 
+
 const rootElement = document.getElementById('root');
 
 if (rootElement) {
