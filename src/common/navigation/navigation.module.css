@@ -1,22 +1,49 @@
-/* Общие стили, применяемые на всех устройствах */
-.body-fixed {
-  overflow: hidden; /* Скрываем прокрутку */
-}
-
 .navbar {
   padding: 0.5rem 1rem;
   background-color: #343a40;
-  position: fixed; /* Фиксируем позицию */
-  top: 0; /* Прикрепляем к верхней части экрана */
-  left: 0; /* Прикрепляем к левой части экрана */
-  width: 100%; /* Ширина на весь экран */
-  z-index: 1000; /* Убедитесь, что навбар будет выше других элементов */
+  position: fixed;
+  width: 1764px;
+  height: 70px;
+  z-index: 1000;
+}
+
+.navbarToggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: -5px;
+  width: 30px; /* Adjust as needed */
+  height: 25px; /* Adjust as needed */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1010; /* Ensure it's above other elements */
+  transition:  0.3s ease; /* Smooth transition for hover effects */
+}
+
+.navbarToggler:hover {
+  background: rgba(0, 0, 0, 0.1); /* Light background color to indicate hover */
+  transform: scale(1.1); /* Slightly increase the size of the button on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to create depth */
+}
+
+
+.navbarToggler .bar1, 
+.navbarToggler .bar2, 
+.navbarToggler .bar3 {
+  width: 100%;
+  height: 4px; /* Adjust the thickness of the lines */
+  background-color: #ffffff; /* Color of the lines */
+  transition: 0.3s;
+  border-radius: 2px; /* Optional: rounded edges */
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .navbarBrand {
@@ -25,30 +52,13 @@
   font-size: 1.25rem;
 }
 
-.navbarBrand:hover {
-  color: #e9ecef;
-}
-
-.navbarToggler {
-  border: none;
-  background: transparent;
-}
-
-.navbarTogglerIcon {
-  display: inline-block;
-  width: 42px;
-  height: 42px;
-  background: url('../../img/menu-regular-24.png');
-  background-size: contain;
-  border: 2px solid black;
-  border-radius: 5px;
-}
-
+/* Offcanvas */
 .offcanvas {
   background-color: #343a40;
   color: #f8f9fa;
 }
 
+/* Nav */
 .nav {
   display: flex;
   flex-direction: column;
@@ -56,28 +66,69 @@
 
 .navLink {
   padding: 0.5rem 1rem;
-  color: #f8f9fa;
+  color: #f8f9fa; /* Noklusējuma krāsa */
+  text-decoration: none; /* Bez underline */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Gluda pāreja krāsu izmaiņām */
 }
 
+/* Stilizēšana, kad uznāk pele */
 .navLink:hover {
-  color: #e9ecef;
+  color: #e9ecef; /* Krāsa, kad uznāk pele */
+  background-color: rgba(255, 255, 255, 0.1); /* Gaišāka fonu krāsa hover laikā */
+  border-radius: 4px; /* Noapaļotas malas hover laikā */
 }
 
-.navDropdown {
+/* Dropdown Menu */
+.dropdownContainer {
+  position: relative;
+}
+
+.dropdownButton {
   background-color: #343a40;
+  color: #f8f9fa;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
 }
 
-.navDropdownItem {
-  color: #000000;
-}
-
-.navDropdownItem:hover {
+.dropdownButton:hover {
   background-color: #495057;
 }
 
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid beige;
+  border-radius: 8px;
+  background-color: #343a40;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.showDropdown {
+  display: block;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.dropdownItem:hover {
+  background-color: #495057;
+}
+
+/* Search Form */
 .searchForm {
   display: flex;
   margin-top: 16px;
+  transition: margin-top 0.3s ease; /* Smooth transition */
 }
 
 .searchInput {
@@ -85,6 +136,7 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: beige;
 }
 
 .searchButton {
@@ -101,67 +153,15 @@
   background-color: #218838;
 }
 
+/* Form pushed down */
 .formPushedDown {
-  margin-top: 140px;
+  margin-top: 170px; /* Adjust based on the height of your dropdown */
 }
 
-/* Адаптивные стили для экранов меньшего размера */
-
-/* Для устройств шириной 768px и менее */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem;
-  }
-
-  .navbarBrand {
-    font-size: 1rem; /* Уменьшаем размер шрифта */
-  }
-
-  .navbarTogglerIcon {
-    width: 36px; /* Уменьшаем размер иконки */
-    height: 36px;
-  }
-
-  .navLink {
-    padding: 0.5rem 0.75rem; /* Уменьшаем отступы */
-  }
-
-  .searchForm {
-    flex-direction: column; /* Выравниваем форму поиска по вертикали */
-    margin-top: 8px;
-  }
-
-  .searchButton {
-    margin-left: 0;
-    margin-top: 8px;
-    width: 100%; /* Кнопка занимает всю ширину */
-  }
+.bodyFixed {
+  overflow: hidden;
 }
 
-/* Для устройств шириной 576px и менее */
-@media (max-width: 576px) {
-  .navbarBrand {
-    font-size: 0.875rem; /* Еще больше уменьшаем размер шрифта */
-  }
-
-  .navbarTogglerIcon {
-    width: 32px; /* Уменьшаем размер иконки */
-    height: 32px;
-  }
-
-  .navLink {
-    padding: 0.5rem 0.5rem; /* Еще больше уменьшаем отступы */
-  }
-
-  .searchForm {
-    margin-top: 4px; /* Уменьшаем отступ сверху */
-  }
-
-  .searchInput {
-    padding: 6px; /* Уменьшаем внутренние отступы */
-  }
-
-  .searchButton {
-    padding: 6px 12px; /* Уменьшаем размер кнопки */
-  }
+.logo {
+  width: 300px;
 }

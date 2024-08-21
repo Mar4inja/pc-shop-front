@@ -1,122 +1,94 @@
-/* home.module.css */
-.home {
-  text-align: center;
-  padding: 60px;
-  background: url('../../img/bg.jpg');
-  background-size: cover;
+body {
+  position: fixed; /* Saglabā body pozicionēšanu kā fixed */
+  width: 69%;
+  left: 394px;
+  top: 0;
+  border: 1px solid beige;
+  height: 100%;
+  overflow: hidden; /* Novērš skrollēšanu uz body */
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.603); /* Skaista ēna */
 }
 
-.card_container {
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  display: flex;
-  justify-content: space-around;
-  gap: 80px;
-  flex-wrap: wrap;
-  
+.scrollable-container {
+  position: absolute; /* Mainīts no fixed uz absolute */
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll; /* Atļauj vertikālo skrollēšanu */
 }
 
-.card {
-  padding: 10px;
-  width: 450px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative; /* Pozicionē kartiņas relatīvi */
-  transition: transform 0.3s ease;
+/* Slēpj skrollēšanas joslu, bet saglabā skrollēšanas funkcionalitāti */
+.scrollable-container::-webkit-scrollbar {
+  width: 0px; /* Skrollēšanas joslas platums */
+  background: transparent; /* Skrollēšanas joslas fona krāsa */
 }
 
-.card:hover {
-transform: scale(1.05);
+html {
+  height: 100%; /* Nodrošina, ka html aizņem visu skatījuma augstumu */
+  background-color: beige; /* Fona krāsa */
 }
 
-
-.card img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.tooltip {
-  display: none;
-  position: absolute;
-  background-color: #333333da;
-  color: #fff;
-  padding: 15px;
-  border-radius: 12px;
-  font-size: 14px;
-  width: 400px;
-  height: auto;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  margin-top: 100px;
-  opacity: 0;
-  transition: opacity 0.3s ease, margin-top 0.3s ease;
-}
-
-.tooltip_container:hover .tooltip {
-  display: block;
-  opacity: 1; /* Maina redzamību uz 1 */
-  margin-top: 10px; /* Pārvieto tooltip tuvāk elementam ar pāreju */
+.discount_icon {
+position: absolute;
+top: 7%;
+right: 4%;
+width: 300px;
 }
 
 .content-container {
   text-align: center;
   padding: 420px;
-  background: rgb(66, 61, 61);
+  background: url('../../img/2.jpg');
   height: 500px;
-}
-@media (max-width: 1024px) {
-  .card_container {
-    justify-content: center; /* Центрируем карточки, если их меньше на линии */
-  }
-  
-
-  .card {
-    width: 45%; /* Карточки занимают 45% ширины контейнера */
-    height: auto;
-    margin-bottom: 20px; /* Добавляем отступ между карточками */
-  }
-
-  .card img {
-    width: 100%; /* Изображение занимает всю ширину карточки */
-    height: auto; /* Высота автоматически подстраивается под ширину */
-  }
-
-  .tooltip {
-    width: 90%;
-    max-width: 350px;
-  }
+  background-size: cover;
 }
 
-/* Адаптивные стили для экранов шириной до 480px */
-@media (max-width: 480px) {
-  .card_container {
-    flex-direction: column; /* Упорядочиваем карточки в колонку */
-    align-items: center; /* Центрируем карточки по горизонтали */
-  }
+.second-content-container {
+  background: url(../../img/1.jpg);
+  background-size: cover;
+  border: 1px solid beige;
+  height: 800px;
+}
 
-  .card {
-    width: 100%; /* Карточки занимают 100% ширины контейнера */
-    height: auto;
-    margin-bottom: 20px; /* Добавляем отступ между карточками */
-  }
+.third-content-container {
+  background: url('../../img/3.jpg');
+  background-size: cover;
+  border: 1px solid beige;
+  height: 800px;
+}
 
-  .card img {
-    width: 100%; /* Изображение занимает всю ширину карточки */
-    height: auto; /* Высота автоматически подстраивается под ширину */
-  }
+.fourth-content-container {
+  background: url('../../img/4.jpg');
+  background-size: cover;
+  border: 1px solid beige;
+  height: 800px;
+}
 
-  .tooltip {
-    width: 100%;
-    max-width: 300px;
-    font-size: 12px;
-  }
+/* .pc {
+  position: absolute;
+  width: 400px;
+}
 
-  .content-container {
-    padding: 30px 15px;
-  }
+.laptop {
+  position: absolute;
+  width: 400px;
+  top: 100%;
+}
+
+.tablet {
+  position: absolute;
+  width: 400px;
+  top: 105%;
+} */
+
+.vram {
+  position: absolute;
+  width: 400px;
+  right: 20%;
+  top: 25%;
+  transition: 0.3s ease;
+}
+
+.vram:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 12px rgb(250, 250, 255));
 }

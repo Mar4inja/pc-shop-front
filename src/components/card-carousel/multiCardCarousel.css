@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   margin-top: -220px;
+ 
 }
 
 .carousel__indicators {
@@ -21,6 +22,87 @@
   width: 10px;
   margin: 0 4px;
   cursor: pointer;
+}
+
+.carousel_button {
+  position: absolute;
+  top: 85%;
+  left: 65%;
+  padding: 10px 30px;
+  border: none;
+  background: #fff;
+  color: #fff;
+  width: 180px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  border-radius: 8px;
+  transition: 0.5s;
+  z-index: 1;
+  --clr: #6eff3e; /* Set the green color */
+}
+
+.carousel_button:hover {
+  background: var(--clr);
+  color: var(--clr);
+  letter-spacing: 0.25em;
+  box-shadow: 0 0 35px var(--clr);
+}
+
+.carousel_button::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #151F28;
+  z-index: -1;
+  border-radius: 6px;
+}
+
+.carousel_button span {
+  position: relative;
+  z-index: 1;
+}
+
+.carousel_button i {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 0;
+}
+
+.carousel_button i::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 10px;
+  height: 4px;
+  background: #151F28;
+  transform: translateX(-50%) skewX(325deg);
+  transition: 0.5s;
+}
+
+.carousel_button:hover i::before {
+  width: 20px;
+  left: 20%;
+}
+
+.carousel_button i::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 10px;
+  height: 4px;
+  background: #151F28;
+  transform: translateX(-50%) skewX(325deg);
+  transition: 0.5s;
+}
+
+.carousel_button:hover i::after {
+  width: 20px;
+  left: 80%;
 }
 
 .carousel__info {
@@ -43,23 +125,41 @@
   height: 420px;
 }
 
-.carousel_button {
-  position: absolute;
-  top: 85%;
-  left: 80%;
-  padding: 7px;
-  border: none;
-  background-color: green;
-  border-radius: 8px;
-}
-
-
-.carousel_button:hover {
-  background-color: rgb(27, 153, 27);
-}
 .carousel__info h2 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 24px;
+  margin-top: auto; /* Pushes the price to the bottom of the container */
+  font-weight: 300;
+  color: #fff; /* White color for the price text */
+  background-color: rgba(0, 0, 0, 0.233); /* Background color for better readability */
+  padding: 10px 20px; /* Padding around the price text */
+  border-radius: 8px; /* Rounded corners for the price box */
+}
+
+.carousel__info h3 {
+  position: absolute;
+  top: -35%;
+  left: -70%;
+  font-size: 42px;
+  background-color: rgba(0, 0, 0, 0.829);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Stilizēt specifikāciju nosaukumus */
+.spec-label {
+  color: #000000; 
+  font-weight: bold; 
+}
+
+/* Stilizēt specifikācijas vērtības */
+.spec-value {
+  color: #ffffff; 
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.534);
 }
 
 .carousel__background {
@@ -68,7 +168,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 2100px;
+  width: 2120px;
   height: 600px;
   background-color: rgba(255, 102, 0, 0.678); /* Fona krāsa */
   z-index: 0; /* Aiz slīdera */
@@ -123,12 +223,26 @@
 }
 
 .carousel__control--prev {
-  left: 8%; /* Samazināts attālums no kreisās malas */
+  left: -38%; /* Samazināts attālums no kreisās malas */
+  background-color: rgba(245, 245, 220, 0.623);
+  transition: 0.5s ease;
+}
+
+.carousel__control--prev:hover {
+  background-color: rgb(245, 245, 220);
 }
 
 .carousel__control--next {
-  right: 59%; /* Samazināts attālums no labās malas */
+  right: -2%; /* Samazināts attālums no labās malas */
+  background-color: rgba(245, 245, 220, 0.623);
+  transition: 0.5s ease;
 }
+
+
+.carousel__control--next:hover {
+  background-color: rgb(245, 245, 220);
+}
+
 
 .carousel__control-icon--prev {
   background-image: url("../../img/prev.svg");
@@ -153,4 +267,20 @@
   height: 500px; /* Фиксированная высота */
   object-fit: cover; /* Обрезка изображения по контейнеру с сохранением пропорций */
   border-radius: 8px; /* Закругленные углы, если нужно */
+  filter: drop-shadow(0 0 12px rgb(181, 221, 191));
+}
+
+.present {
+  font-family: Poppins;
+  position: absolute; /* Position it absolutely to control its placement precisely */
+  top: 100%; /* Adjust as needed */
+  left: 59%; /* Center it horizontally */
+  transform: translateX(-50%); /* Center it horizontally relative to its own width */
+  background-color: #000000d2;
+  padding: 10px;
+  border-radius: 12px;
+  color: rgb(94, 255, 0); /* White text color for contrast */
+  font-size: 1.2rem; /* Font size adjustment */
+  text-align: center; /* Center text */
+  z-index: 1000; /* Ensure it appears above other elements */
 }

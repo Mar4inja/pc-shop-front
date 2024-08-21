@@ -21,7 +21,7 @@ const MultiCardCarousel: React.FC = () => {
         OS: 'Windows 11',
         RAM: 'Kingston 64GB DDR4',
         Motherboard: 'MSI Z370 PRO',
-        Price: '3.958 euro'
+        Price: '3.958 €'
       }
     },
     {
@@ -34,7 +34,7 @@ const MultiCardCarousel: React.FC = () => {
         OS: 'Windows 11 Pro',
         RAM: 'Corsair Vengeance 32GB DDR5',
         Motherboard: 'Gigabyte Z790 AORUS MASTER',
-        Price: '2.500 euro'
+        Price: '2.500 €'
       }
     },
     {
@@ -47,7 +47,7 @@ const MultiCardCarousel: React.FC = () => {
         OS: 'Windows 11 Home',
         RAM: 'G.Skill Ripjaws V 32GB DDR4',
         Motherboard: 'MSI MAG B550 TOMAHAWK',
-        Price: '1.955 euro'
+        Price: '1.955 €'
       }
     },
     {
@@ -60,7 +60,7 @@ const MultiCardCarousel: React.FC = () => {
         OS: 'Linux Fedora',
         RAM: 'Kingston Fury Beast 64GB DDR5',
         Motherboard: 'ASUS ROG Crosshair X670E HERO',
-        Price: '6.500 euro'
+        Price: '6.500 €'
       }
     },
   ];
@@ -77,6 +77,7 @@ const MultiCardCarousel: React.FC = () => {
 
   return (
     <div className="carousel">
+      <p className="present">Buy one of four Pc's and get Nvidia Geforce video card for FREE!</p>
       <div className="carousel__inner">
         {/* Attēls */}
         <div className="carousel__image-container">
@@ -92,15 +93,17 @@ const MultiCardCarousel: React.FC = () => {
 
         {/* Informācijas stabs */}
         <div className="carousel__info">
-          <h2>{slides[activeIndex].title}</h2>
-          <p><strong>CPU:</strong> {slides[activeIndex].specs.CPU}</p>
-          <p><strong>GPU:</strong> {slides[activeIndex].specs.GPU}</p>
-          <p><strong>HDD:</strong> {slides[activeIndex].specs.HDD}</p>
-          <p><strong>Operation System:</strong> {slides[activeIndex].specs.OS}</p>
-          <p><strong>RAM:</strong> {slides[activeIndex].specs.RAM}</p>
-          <p><strong>Motherboard:</strong> {slides[activeIndex].specs.Motherboard}</p>
-          <h3><strong>Price:</strong>{slides[activeIndex].specs.Price}</h3>
-          <button className='carousel_button'>Add to Cart</button>
+          <h3>{slides[activeIndex].title}</h3>
+          <p><span className="spec-label">CPU:</span> <span className="spec-value">{slides[activeIndex].specs.CPU}</span></p>
+          <p><span className="spec-label">GPU:</span> <span className="spec-value">{slides[activeIndex].specs.GPU}</span></p>
+          <p><span className="spec-label">HDD:</span> <span className="spec-value">{slides[activeIndex].specs.HDD}</span></p>
+          <p><span className="spec-label">OS:</span> <span className="spec-value">{slides[activeIndex].specs.OS}</span></p>
+          <p><span className="spec-label">RAM:</span> <span className="spec-value">{slides[activeIndex].specs.RAM}</span></p>
+          <p><span className="spec-label">Motherboard:</span> <span className="spec-value">{slides[activeIndex].specs.Motherboard}</span></p>
+          <h2>Price: <span className="price">{slides[activeIndex].specs.Price}</span></h2>
+          <button className="carousel_button">
+            <span>Add to Cart</span><i></i>
+          </button>
         </div>
       </div>
 
