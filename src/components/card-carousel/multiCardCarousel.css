@@ -23,6 +23,45 @@
   cursor: pointer;
 }
 
+.carousel__info {
+  position: absolute;
+  left: 79%;
+  top: 13%;
+  flex: 0 0 400px; /* Platums informācijas stabam */
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column; /* Informācijas izvietošana vertikāli */
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid black;
+  padding: 40px; /* Iekšējā atstarpe visiem malām */
+  background-color: #ffffff1a; /* Pievienots fona krāsa, lai labāk izceltu tekstu */
+  border-radius: 12px; /* Noapaļoti stūri, lai izskatās labāk */
+  border: 1px solid #ffffff20;
+  backdrop-filter: blur(16px) saturate(120%);
+  width: 600px;
+  height: 420px;
+}
+
+.carousel_button {
+  position: absolute;
+  top: 85%;
+  left: 80%;
+  padding: 7px;
+  border: none;
+  background-color: green;
+  border-radius: 8px;
+}
+
+
+.carousel_button:hover {
+  background-color: rgb(27, 153, 27);
+}
+.carousel__info h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
 .carousel__background {
   position: absolute;
   top: -10%;

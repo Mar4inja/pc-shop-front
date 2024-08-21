@@ -5,9 +5,14 @@ import MultiCardCarousel from '../card-carousel/MultiCardCarousel';
 
 const Home: React.FC = () => {
   return (
+    <>
     <div className={styles['content-container']}>
     <MultiCardCarousel/>
     </div>
+    <div className={styles['second-content-container']}>
+<h3>SECOND</h3>
+    </div>
+    </>
   );
 };
 

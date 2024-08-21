@@ -1,6 +1,6 @@
 import React from "react";
 import MyRoutes from "./MyRoutes";
-import Navigation from "./components/navigation/Navigation";
+import Navigation from "./common/navigation/Navigation";
 
 
 function App() {

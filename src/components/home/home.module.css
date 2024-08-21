@@ -66,7 +66,7 @@ transform: scale(1.05);
 .content-container {
   text-align: center;
   padding: 420px;
-  background: green;
+  background: rgb(66, 61, 61);
   height: 500px;
 }
 @media (max-width: 1024px) {
