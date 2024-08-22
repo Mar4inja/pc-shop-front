@@ -5,6 +5,7 @@ import discountImage from "../../img/quality.png";
 import pc from "../../img/buyPC.png";
 import laptop from "../../img/buyLaptop.png";
 import tablets from "../../img/buyTablet.png";
+import headphones from "../../img/headphone.png";
 import andGetVRam from "../../img/andGetVRAM.png"
 
 
@@ -25,16 +26,19 @@ const Home: React.FC = () => {
             <img className={styles["tablets"]} src={tablets} alt="Tablets" />
           </div>
           <div className={styles["card_two"]}>
+          <h3>Laptops</h3>
             <img className={styles["laptop"]} src={laptop} alt="Laptop" />
           </div>
           <div className={styles["card_three"]}>
 
           </div>
           <div className={styles["card_four"]}>
+          <h3>Pc's</h3>
             <img className={styles["pc"]} src={pc} alt="Pc" />
           </div>
           <div className={styles["card_five"]}>
-
+            <h3>Headphones</h3>
+            <img className={styles["headphones"]} src={headphones} alt="" />
           </div>
           <div className={styles["card_six"]}>
 

@@ -123,11 +123,10 @@ width: 300px;
 
 .card_one h3 {
 position: absolute;
+font-family: "Poppins";
 top: 3%;
 color: rgb(184, 255, 118);
-background-color: rgba(10, 54, 75, 0.61);
 padding: var(--text_padding);
-border-radius: 12px;
 }
 
 .tablets {
@@ -145,6 +144,14 @@ border-radius: 12px;
   align-items: center;
   justify-content: center;
 }
+
+.card_two h3 {
+  position: absolute;
+  font-family: "Poppins";
+  top: 50%;
+  color: rgb(184, 255, 118);
+  padding: var(--text_padding);
+  }
 
 .laptop {
   width: 280px;
@@ -172,6 +179,14 @@ border-radius: 12px;
   justify-content: center;
 }
 
+.card_four h3 {
+  position: absolute;
+  font-family: "Poppins";
+  top: 1%;
+  color: rgb(184, 255, 118);
+  padding: var(--text_padding);
+  }
+
 .pc {
   width: 380px;
 }
@@ -185,6 +200,19 @@ border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.card_five h3 {
+  position: absolute;
+  font-family: "Poppins";
+  top: 50%;
+  color: rgb(184, 255, 118);
+  padding: var(--text_padding);
+  }
+
+
+.headphones {
+  width: 350px;
 }
 
 .card_six {
