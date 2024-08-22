@@ -82,7 +82,7 @@ const Navigation: React.FC = () => {
                 <Nav.Link href="/" className={styles.navLink} active>
                   Home
                 </Nav.Link>
-                <Nav.Link href="#" className={styles.navLink}>
+                <Nav.Link href="login" className={styles.navLink}>
                   Login
                 </Nav.Link>
                 <Nav.Link href="#" className={styles.navLink}>

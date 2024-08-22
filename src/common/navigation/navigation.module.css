@@ -165,86 +165,49 @@
   width: 300px;
 }
 
-@media (max-width: 1920px) {
+/* Mediālie vaicājumi */
+@media only screen and (min-width: 1024px) and (max-width: 1920px) {
   .navbar {
-    padding: 0.5rem 1rem;
-    background-color: #343a40;
-    position: fixed;
-    width: 1323px;
-    height: 70px;
-    z-index: 1000;
-  }
-
-}
-
-/* For screens 1024px or smaller */
-@media (max-width: 1080px) {
-  .navbar {
-    height: 60px;
-  }
-
-  .navbarBrand {
-    font-size: 1.15rem;
-  }
-
-  .logo {
-    max-width: 80%;
+    width: 1726px; /* Pilns platums */
   }
 
   .navbarToggler {
-    width: 25px;
-    height: 20px;
+    width: 35px; /* Palielināts izmērs, lai labāk redzētu */
+    height: 30px; /* Palielināts izmērs */
   }
-}
 
-/* For screens 768px or smaller */
-@media (max-width: 768px) {
-  .navbar {
-    height: 55px;
+  .navbarToggler .bar1, 
+  .navbarToggler .bar2, 
+  .navbarToggler .bar3 {
+    height: 5px; /* Palielināts bāru biezums */
   }
 
   .navbarBrand {
-    font-size: 1rem;
+    font-size: 1.5rem; /* Palielināts fonta izmērs */
   }
 
-  .logo {
-    max-width: 70%;
+  .navLink {
+    padding: 0.75rem 1.25rem; /* Palielināta atstarpe */
   }
 
-  .navbarToggler {
-    width: 20px;
-    height: 18px;
+  .dropdownButton {
+    padding: 0.75rem 1.25rem; /* Palielināta padding */
+    font-size: 1.1rem; /* Palielināts fonta izmērs */
   }
 
   .dropdownMenu {
-    min-width: 140px;
-  }
-}
-
-/* For screens 468px or smaller */
-@media (max-width: 468px) {
-  .navbar {
-    height: 50px;
-  }
-
-  .navbarBrand {
-    font-size: 0.875rem;
-  }
-
-  .logo {
-    max-width: 60%;
-  }
-
-  .navbarToggler {
-    width: 18px;
-    height: 15px;
-  }
-
-  .dropdownMenu {
-    min-width: 120px;
+    min-width: 200px; /* Platāks dropdown menu */
   }
 
   .searchForm {
-    margin-top: 5px;
+    margin-top: 20px; /* Palielināts augstums no iepriekšējiem elementiem */
+  }
+
+  .searchInput {
+    padding: 10px; /* Palielināta padding */
+  }
+
+  .searchButton {
+    padding: 10px 20px; /* Palielināta padding */
   }
 }
