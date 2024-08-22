@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap');
+
 .carousel {
   position: relative;
   width: 100%;
@@ -271,7 +273,10 @@
 }
 
 .present {
-  font-family: Poppins;
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
   position: absolute; /* Position it absolutely to control its placement precisely */
   top: 100%; /* Adjust as needed */
   left: 59%; /* Center it horizontally */
@@ -283,4 +288,161 @@
   font-size: 1.2rem; /* Font size adjustment */
   text-align: center; /* Center text */
   z-index: 1000; /* Ensure it appears above other elements */
+}
+
+@media (max-width: 1920px) {
+  .carousel {
+    margin-top: -220px; /* Pielāgota negatīvā atstarpe, lai atbilstu ekrāna lielumam */
+  }
+
+  .carousel__info {
+    width: 520px; /* Nedaudz mazāks platums, lai tas būtu proporcionāls */
+    left: 115%; /* Nedaudz pārkārtots, lai saglabātu līdzsvaru */
+    top: 15%; /* Pielāgots augstums, lai atbilstu šim ekrāna izmēram */
+    padding: 30px; /* Samazināts padding, lai būtu vairāk vietas citiem elementiem */
+  }
+
+  .carousel__info h3 {
+    position: absolute;
+    top: -15%;
+    left: -65%;
+  }
+
+  .carousel_button {
+    top: 87%;
+    left: 65%;
+    width: 160px; /* Mazāka poga, lai tā nebūtu pārāk dominējoša */
+    font-size: 11px; /* Nedaudz mazāks fonts */
+  }
+
+  .carousel__image {
+    margin-left: 160px ;
+    margin-top: 110px;
+    width: 70%; /* Pielāgots platums, lai tas būtu proporcionāls */
+    height: auto; /* Ļauj augstumam pielāgoties, saglabājot proporcijas */
+    filter: drop-shadow(0 0 10px rgb(181, 221, 191)); /* Samazināts filteris */
+  }
+
+  .carousel__control--prev,
+  .carousel__control--next {
+    top: 60%; /* Pielāgota bultu vertikālā pozīcija */
+  }
+
+  .carousel__control--prev {
+    left: -90%; /* Pielāgots attālums no kreisās malas */
+  }
+
+  .carousel__control--next {
+    right: -40%; /* Pielāgots attālums no labās malas */
+  }
+
+  .carousel__background {
+    width: 100%; /* Pilns platums */
+    height: 500px; /* Samazināts augstums */
+    border-radius: 20px; /* Samazināta noapaļotā stūru rādiusa */
+  }
+
+  .present {
+    font-size: 1.1rem; /* Nedaudz mazāks fonts */
+    left: 55%; /* Pielāgota horizontālā pozīcija */
+    top: 120%; /* Pielāgots augstums, lai tas būtu zemāk */
+    width: 200px;
+  }
+}
+
+/* Pielāgošana ekrāniem, kuru platums ir 768px vai mazāks */
+@media (max-width: 768px) {
+  .carousel {
+    margin-top: -100px; /* Mazāka negatīvā atstarpe */
+  }
+
+  .carousel__info {
+    width: 100%; /* Pielāgo platumu pilnai ekrāna platumam */
+    left: 50%; /* Centrs horizontāli */
+    transform: translateX(-50%); /* Centrs horizontāli */
+    padding: 20px; /* Samazināts padding */
+    top: 10%; /* Pielāgo augstumu */
+  }
+
+  .carousel_button {
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px; /* Mazāka poga */
+    font-size: 10px; /* Mazāks fonts */
+  }
+
+  .carousel__image {
+    width: 100%; /* Pielāgo pilnai platumam */
+    height: auto; /* Ļauj augstumam pielāgoties */
+  }
+
+  .carousel__control--prev,
+  .carousel__control--next {
+    top: 45%; /* Pielāgo bultu vertikālo pozīciju */
+  }
+
+  .carousel__control--prev {
+    left: 5%;
+  }
+
+  .carousel__control--next {
+    right: 5%;
+  }
+
+  .carousel__background {
+    width: 100%; /* Pielāgo pilnai platumam */
+    height: 400px; /* Samazināts augstums */
+  }
+
+  .present {
+    font-size: 1rem; /* Mazāks fonta izmērs */
+    left: 50%; /* Centrs horizontāli */
+    top: 90%; /* Pielāgo augstumu */
+    transform: translateX(-50%);
+  }
+}
+
+/* Pielāgošana ekrāniem, kuru platums ir 468px vai mazāks */
+@media (max-width: 468px) {
+  .carousel {
+    margin-top: -50px; /* Vēl mazāka negatīvā atstarpe */
+  }
+
+  .carousel__info {
+    width: 100%; /* Pilns platums */
+    padding: 10px; /* Vēl mazāks padding */
+    top: 5%; /* Pielāgo augstumu */
+  }
+
+  .carousel_button {
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px; /* Mazāka poga */
+    font-size: 8px; /* Mazāks fonts */
+  }
+
+  .carousel__control--prev,
+  .carousel__control--next {
+    top: 40%; /* Pielāgo bultu vertikālo pozīciju */
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel__image {
+    width: 100%; /* Pilns platums */
+    height: auto;
+    filter: none; /* Noņem filteri */
+  }
+
+  .carousel__background {
+    width: 100%; /* Pilns platums */
+    height: 300px; /* Vēl mazāks augstums */
+  }
+
+  .present {
+    font-size: 0.8rem; /* Mazāks fonta izmērs */
+    top: 85%; /* Pielāgo augstumu */
+  }
 }

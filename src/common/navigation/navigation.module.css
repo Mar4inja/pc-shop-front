@@ -153,9 +153,8 @@
   background-color: #218838;
 }
 
-/* Form pushed down */
 .formPushedDown {
-  margin-top: 170px; /* Adjust based on the height of your dropdown */
+  margin-top: 170px; 
 }
 
 .bodyFixed {
@@ -164,4 +163,88 @@
 
 .logo {
   width: 300px;
+}
+
+@media (max-width: 1920px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    background-color: #343a40;
+    position: fixed;
+    width: 1323px;
+    height: 70px;
+    z-index: 1000;
+  }
+
+}
+
+/* For screens 1024px or smaller */
+@media (max-width: 1080px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .navbarBrand {
+    font-size: 1.15rem;
+  }
+
+  .logo {
+    max-width: 80%;
+  }
+
+  .navbarToggler {
+    width: 25px;
+    height: 20px;
+  }
+}
+
+/* For screens 768px or smaller */
+@media (max-width: 768px) {
+  .navbar {
+    height: 55px;
+  }
+
+  .navbarBrand {
+    font-size: 1rem;
+  }
+
+  .logo {
+    max-width: 70%;
+  }
+
+  .navbarToggler {
+    width: 20px;
+    height: 18px;
+  }
+
+  .dropdownMenu {
+    min-width: 140px;
+  }
+}
+
+/* For screens 468px or smaller */
+@media (max-width: 468px) {
+  .navbar {
+    height: 50px;
+  }
+
+  .navbarBrand {
+    font-size: 0.875rem;
+  }
+
+  .logo {
+    max-width: 60%;
+  }
+
+  .navbarToggler {
+    width: 18px;
+    height: 15px;
+  }
+
+  .dropdownMenu {
+    min-width: 120px;
+  }
+
+  .searchForm {
+    margin-top: 5px;
+  }
 }
