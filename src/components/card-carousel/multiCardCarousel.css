@@ -195,10 +195,6 @@
   display: block;
 }
 
-.carousel__image {
-  width: 100%;
-  height: auto;
-}
 
 .carousel__control {
   background-color: rgba(0, 0, 0, 0.5);
@@ -270,6 +266,12 @@
   object-fit: cover; /* Обрезка изображения по контейнеру с сохранением пропорций */
   border-radius: 8px; /* Закругленные углы, если нужно */
   filter: drop-shadow(0 0 12px rgb(181, 221, 191));
+  transition: 0.5s ease;
+}
+
+
+.carousel__image:hover {
+  transform: scale(1.1);
 }
 
 .present {
@@ -321,6 +323,10 @@
     width: 70%; /* Pielāgots platums, lai tas būtu proporcionāls */
     height: auto; /* Ļauj augstumam pielāgoties, saglabājot proporcijas */
     filter: drop-shadow(0 0 10px rgb(181, 221, 191)); /* Samazināts filteris */
+  }
+
+  .carousel__image:hover {
+    transform: scale(1.2);
   }
 
   .carousel__control--prev,
