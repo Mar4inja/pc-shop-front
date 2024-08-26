@@ -4,12 +4,11 @@ import image1 from '../../img/pcs/3.png';
 import image2 from '../../img/pcs/img_0010_8_3.png';
 import image3 from '../../img/pcs/img_0013_12.png';
 import image4 from '../../img/pcs/img_0016_14.png';
+import andGetVRam from "../../img/andGetVRAM.png"
 
 const MultiCardCarousel: React.FC = () => {
-  // Stāvokļa huks aktīvajam slaidam
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Slaidu dati un tiem atbilstošā informācija
   const slides = [
     {
       image: image1,
@@ -65,21 +64,18 @@ const MultiCardCarousel: React.FC = () => {
     },
   ];
 
-  // Pāreja uz nākamo slaidu
   const handleNext = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
 
-  // Pāreja uz iepriekšējo slaidu
   const handlePrev = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
   };
 
   return (
     <div className="carousel">
-      <p className="present">Buy one of four Pc's and get Nvidia Geforce video card for FREE!</p>
+      <p className="present">Buy one of four PCs and get a Nvidia Geforce video card for FREE!</p>
       <div className="carousel__inner">
-        {/* Attēls */}
         <div className="carousel__image-container">
           {slides.map((slide, index) => (
             <div
@@ -90,8 +86,6 @@ const MultiCardCarousel: React.FC = () => {
             </div>
           ))}
         </div>
-
-        {/* Informācijas stabs */}
         <div className="carousel__info">
           <h3>{slides[activeIndex].title}</h3>
           <p><span className="spec-label">CPU:</span> <span className="spec-value">{slides[activeIndex].specs.CPU}</span></p>
@@ -106,7 +100,7 @@ const MultiCardCarousel: React.FC = () => {
           </button>
         </div>
       </div>
-
+      <img className="vram" src={andGetVRam} alt="VRAM" />
       <div className="carousel__controls">
         <button className="carousel__control carousel__control--prev" onClick={handlePrev}>
           <span className="carousel__control-icon carousel__control-icon--prev" aria-hidden="true" />

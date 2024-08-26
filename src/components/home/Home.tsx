@@ -6,7 +6,7 @@ import pc from "../../img/buyPC.png";
 import laptop from "../../img/buyLaptop.png";
 import tablets from "../../img/buyTablet.png";
 import headphones from "../../img/headphone.png";
-import andGetVRam from "../../img/andGetVRAM.png"
+
 
 
 
@@ -21,6 +21,7 @@ const Home: React.FC = () => {
       </div>
       <div className={styles["second-content-container"]}>
         <div className={styles["card_container"]}>
+          
           <div className={styles["card_one"]}>
             <h3>Tablets</h3>
             <img className={styles["tablets"]} src={tablets} alt="Tablets" />
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
 
           </div>
         </div>
-        <img className={styles["vram"]} src={andGetVRam} alt="VRAM" />
+      
       </div>
       <div className={styles["third-content-container"]}>
         <h3>THIRD</h3>
