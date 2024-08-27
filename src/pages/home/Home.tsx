@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./home.module.css"; // Importē CSS moduli
-import MultiCardCarousel from "../card-carousel/MultiCardCarousel";
+import MultiCardCarousel from "../../components/card-carousel/MultiCardCarousel";
 import discountImage from "../../img/quality.png";
 import pc from "../../img/buyPC.png";
 import laptop from "../../img/buyLaptop.png";

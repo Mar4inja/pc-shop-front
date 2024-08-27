@@ -4,10 +4,13 @@ import image1 from '../../img/pcs/3.png';
 import image2 from '../../img/pcs/img_0010_8_3.png';
 import image3 from '../../img/pcs/img_0013_12.png';
 import image4 from '../../img/pcs/img_0016_14.png';
-import andGetVRam from "../../img/andGetVRAM.png"
+import andGetVRam from "../../img/andGetVRAM.png";
+import plusIcon from "../../img/plus.png";
+import gift from "../../img/gift.png";
 
 const MultiCardCarousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isGiftVisible, setIsGiftVisible] = useState(true);
 
   const slides = [
     {
@@ -66,10 +69,20 @@ const MultiCardCarousel: React.FC = () => {
 
   const handleNext = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    setIsGiftVisible(true); // Show the gift image again on slide change
   };
 
   const handlePrev = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+    setIsGiftVisible(true); // Show the gift image again on slide change
+  };
+
+  const handleGiftClick = () => {
+    setIsGiftVisible(false); // Hide the gift image
+  };
+
+  const handleVramClick = () => {
+    setIsGiftVisible(true); // Show the gift image again
   };
 
   return (
@@ -88,19 +101,17 @@ const MultiCardCarousel: React.FC = () => {
         </div>
         <div className="carousel__info">
           <h3>{slides[activeIndex].title}</h3>
-          <p><span className="spec-label">CPU:</span> <span className="spec-value">{slides[activeIndex].specs.CPU}</span></p>
-          <p><span className="spec-label">GPU:</span> <span className="spec-value">{slides[activeIndex].specs.GPU}</span></p>
-          <p><span className="spec-label">HDD:</span> <span className="spec-value">{slides[activeIndex].specs.HDD}</span></p>
-          <p><span className="spec-label">OS:</span> <span className="spec-value">{slides[activeIndex].specs.OS}</span></p>
-          <p><span className="spec-label">RAM:</span> <span className="spec-value">{slides[activeIndex].specs.RAM}</span></p>
-          <p><span className="spec-label">Motherboard:</span> <span className="spec-value">{slides[activeIndex].specs.Motherboard}</span></p>
-          <h2>Price: <span className="price">{slides[activeIndex].specs.Price}</span></h2>
           <button className="carousel_button">
             <span>Add to Cart</span><i></i>
           </button>
         </div>
       </div>
-      <img className="vram" src={andGetVRam} alt="VRAM" />
+      <img className="plus__icon" src={plusIcon} alt="Plus" />
+      {isGiftVisible ? (
+        <img className="gift" src={gift} alt="Gift" onClick={handleGiftClick} />
+      ) : (
+        <img className="vram" src={andGetVRam} alt="VRAM" onClick={handleVramClick} />
+      )}
       <div className="carousel__controls">
         <button className="carousel__control carousel__control--prev" onClick={handlePrev}>
           <span className="carousel__control-icon carousel__control-icon--prev" aria-hidden="true" />
